@@ -1,0 +1,53 @@
+{{define "edit"}}
+{{ template "_head"}}
+{{ template "_nav"}}
+<body>
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-5">Editar Transação</h1>
+                <p class="lead">Insira os dados para atualizar</p>
+            </div>
+        </div>
+        <form method="POST" action="update">
+            <input type="hidden" name="id" value="{{.Id}}">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="form-group">
+                            <label for="name" >Nome:</label>
+                            <input type="text" name="name" class="form-control" value="{{.Name}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="form-group">
+                            <label for="description">Descrição:</label>
+                            <input type="text" name="description" class="form-control" value="{{.Description}}">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label for="valor">Valor:</label>
+                            <input type="number" name="value" class="form-control" step="0.01" value="{{.Value}}">
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="row">
+                    <div class="col-sm-2">
+                        <div class="form-group">
+                            <label for="date">Date:</label>
+                            <input type="date" name="date" class="form-control" value="{{.Date}}">
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" value="salvar" class="btn btn-success">Atualizar</button>
+                <a class="btn btn-info" href="/">Voltar</a>
+        </form>
+    </div>
+</body>
+</html>
+{{end}}

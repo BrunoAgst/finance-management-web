@@ -1,0 +1,51 @@
+{{ define "new" }}
+{{ template "_head"}}
+{{ template "_nav" }}
+<body>
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h1 class="display-5">Nova Transação</h1>
+                <p class="lead">Insira os detalhes</p>
+            </div>
+        </div>
+        <form method="POST" action="insert">
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="form-group">
+                        <label for="name">Nome:</label>
+                        <input type="text" name="name" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="form-group">
+                        <label for="description">Descrição:</label>
+                        <input type="text" name="description" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="form-group">
+                        <label for="value">Valor:</label>
+                        <input type="number" name="value" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                    <div class="form-group">
+                        <label for="date">Data:</label>
+                        <input type="date" name="date" class="form-control">
+                    </div>
+                </div>
+            </div>
+            <button type="submit" value="save" class="btn btn-success">Salvar</button>
+            <a class="btn btn-info" href="/">Voltar</a>
+        </form>
+    </div>
+</body>
+</html>
+{{end}}
